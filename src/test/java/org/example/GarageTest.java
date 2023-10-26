@@ -8,11 +8,10 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-//import org.mockito.junit.Moc`
 
 public class GarageTest {
 
-    @Mock
+    //@Mock
     private Car mockedCar;
     private Motorbike mockedBike;
     private Garage mockedGarage;
@@ -70,6 +69,15 @@ public class GarageTest {
         assertEquals(0, mockedGarage.getNumberOfBikes());
     }
 
+    @Test
+    public void testMakingGarageEmpty(){
+        mockedGarage.emptyGarage();
+        assertEquals(0, mockedGarage.getNumOfVehicles());
+    }
 
+    @Test
+    public void testCheckTotalCost(){
+        assertEquals(2000, mockedGarage.getTotalCostGarage());
+    }
 
 }
